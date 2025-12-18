@@ -31,14 +31,14 @@ h1 {
   margin: 0;
   font-family: 'Righteous', cursive;
   overflow: hidden;
-  background-image: url('../gkresources/Media/band.jpg');
+  background-image: url('gkresources/Media/band.jpg');
   background-size: cover;
   background-position: center;
 }
 
 /* Live page uses thumbdown image */
 .live-page h1 {
-  background-image: url('../gkresources/Media/thumbdown.jpg');
+  background-image: url('gkresources/Media/thumbdown.jpg');
 }
 
 /* Right-side nav */
