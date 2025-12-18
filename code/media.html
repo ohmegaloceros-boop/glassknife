@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="utf-8">
@@ -78,4 +77,108 @@
 		});
 	</script>
 </body>
+<!-- ============================= -->
+<!-- Glass Knife Media Page        -->
+<!-- ============================= -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- ===== Document Head ===== -->
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>Glass Knife — Media</title>
+	<link rel="stylesheet" href="gk.css">
+</head>
+
+<body>
+
+	<!-- ===== Navigation Bar ===== -->
+	<nav>
+		<a href="media.html">media</a>
+		<a href="merch.html">merch</a>
+		<a href="live.html">live</a>
+		<a href="contact.html">contact</a>
+		<a href="../index.html">home</a>
+	</nav>
+
+	<!-- ===== Header Section ===== -->
+	<header>
+		<h1>Media</h1>
+	</header>
+
+	<!-- ===== Main Content ===== -->
+	<main>
+		<!-- (Reserved for future media content) -->
+	</main>
+
+	<!-- ===== Side Scroll Info Box ===== -->
+	<div class="side-scroll">
+		<h3>Links</h3>
+		<ul class="side-links">
+			<li><a href="https://glassknife.bandcamp.com/track/practice-wav-wav" target="_blank" rel="noopener">Bandcamp</a></li>
+			<li><a href="https://www.youtube.com/@GlassKnife-gk666" target="_blank" rel="noopener">YouTube</a></li>
+		</ul>
+
+		<h3>Photos</h3>
+		<div class="gallery">
+			<img src="../gkresources/Media/426.jpg" alt="Our first show in the alley 4.26.25" class="gallery-thumbnail" onclick="openLightbox(0)">
+			<img src="../gkresources/Media/d31.jpg" alt="Dec. 11th @D3 Arts" class="gallery-thumbnail" onclick="openLightbox(1)">
+			<img src="../gkresources/Media/d32.jpg" alt="Dec. 11th @D3 Arts" class="gallery-thumbnail" onclick="openLightbox(2)">
+			<img src="../gkresources/Media/d33.jpg" alt="Dec. 11th @D3 Arts" class="gallery-thumbnail" onclick="openLightbox(3)">
+			<img src="../gkresources/Media/d34.jpg" alt="Dec. 11th @D3 Arts" class="gallery-thumbnail" onclick="openLightbox(4)">
+			<img src="../gkresources/Media/d35.jpg" alt="Dec. 11th @D3 Arts" class="gallery-thumbnail" onclick="openLightbox(5)">
+			<img src="../gkresources/Media/d36.jpg" alt="Dec. 11th @D3 Arts" class="gallery-thumbnail" onclick="openLightbox(6)">
+			<img src="../gkresources/Media/alleyfest1.jpg" alt="AlleyFest 9.27.25" class="gallery-thumbnail" onclick="openLightbox(7)">
+		</div>
+	</div>
+
+	<!-- ===== Lightbox for Gallery ===== -->
+	<div id="lightbox" class="lightbox">
+		<span class="close" onclick="closeLightbox()">&times;</span>
+		<span class="prev" onclick="changeImage(-1)">&#10094;</span>
+		<span class="next" onclick="changeImage(1)">&#10095;</span>
+		<img id="lightbox-img" src="" alt="Glass Knife">
+	</div>
+
+	<!-- ===== Gallery Lightbox Script ===== -->
+	<script>
+		// Array of gallery image filenames
+		const images = ['426.jpg', 'd31.jpg', 'd32.jpg', 'd33.jpg', 'd34.jpg', 'd35.jpg', 'd36.jpg', 'alleyfest1.jpg'];
+		let currentIndex = 0;
+
+		// Open the lightbox and show the selected image
+		function openLightbox(index) {
+			currentIndex = index;
+			document.getElementById('lightbox').style.display = 'flex';
+			document.getElementById('lightbox-img').src = images[currentIndex];
+			document.body.style.overflow = 'hidden';
+		}
+
+		// Close the lightbox
+		function closeLightbox() {
+			document.getElementById('lightbox').style.display = 'none';
+			document.body.style.overflow = 'auto';
+		}
+
+		// Change image in the lightbox
+		function changeImage(direction) {
+			currentIndex += direction;
+			if (currentIndex < 0) currentIndex = images.length - 1;
+			if (currentIndex >= images.length) currentIndex = 0;
+			document.getElementById('lightbox-img').src = images[currentIndex];
+		}
+
+		// Keyboard navigation for lightbox
+		document.addEventListener('keydown', function(event) {
+			if (event.key === 'Escape') closeLightbox();
+			if (event.key === 'ArrowLeft') changeImage(-1);
+			if (event.key === 'ArrowRight') changeImage(1);
+		});
+	</script>
+
+</body>
+
+</html>
 </html>
