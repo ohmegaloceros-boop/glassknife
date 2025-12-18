@@ -238,9 +238,11 @@ main {
     height: 300px;
     font-size: 60px;
     padding: 20px;
-    justify-content: flex-end;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    justify-content: flex-start;
     align-items: flex-end;
-    text-align: right;
+    text-align: left;
   }
 
   /* Make nav full width at the top */
