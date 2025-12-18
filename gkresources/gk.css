@@ -37,6 +37,11 @@ h1 {
   background-position: center;
 }
 
+/* Live page uses thumbdown image */
+.live-page h1 {
+  background-image: url('thumbdown.jpg');
+}
+
 /* Right-side nav */
 nav {
   position: fixed;
