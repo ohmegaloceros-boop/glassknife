@@ -1,1 +1,1 @@
-THis is the page for the Denver band Glass Knife
+This is the page for the Denver band Glass Knife
