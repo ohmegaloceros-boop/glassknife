@@ -16,8 +16,15 @@
 
 <body>
 
+  <!-- ===== Hamburger Button ===== -->
+  <button class="hamburger-btn" id="hamburger-btn" aria-label="Toggle navigation menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
   <!-- ===== Navigation Bar ===== -->
-  <nav>
+  <nav id="nav-menu">
     <a href="media.html">media</a>
     <a href="merch.html">merch</a>
     <a href="live.html">live</a>
@@ -50,3 +57,34 @@
 </body>
 
 </html>
+
+<script>
+  // Hamburger menu toggle functionality
+  const hamburgerBtn = document.getElementById('hamburger-btn');
+  const navMenu = document.getElementById('nav-menu');
+
+  hamburgerBtn.addEventListener('click', function() {
+    hamburgerBtn.classList.toggle('active');
+    navMenu.classList.toggle('mobile-active');
+  });
+
+  // Close menu when a link is clicked
+  const navLinks = navMenu.querySelectorAll('a');
+  navLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      hamburgerBtn.classList.remove('active');
+      navMenu.classList.remove('mobile-active');
+    });
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener('click', function(event) {
+    const isClickInsideMenu = navMenu.contains(event.target);
+    const isClickInsideBtn = hamburgerBtn.contains(event.target);
+    
+    if (!isClickInsideMenu && !isClickInsideBtn) {
+      hamburgerBtn.classList.remove('active');
+      navMenu.classList.remove('mobile-active');
+    }
+  });
+</script>

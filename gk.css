@@ -54,45 +54,93 @@ h1 {
 
 /* ===== Navigation Bar ===== */
 nav {
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
   position: fixed;
-  top: 0;
-  right: 0;
-  width: 50%;
-  background-color: rgb(35, 33, 33);
-  padding: 20px;
-  box-sizing: border-box;
-  display: flex;
-  gap: 15px;
-  justify-content: center;
-  align-items: center;
-  height: 80px;
+  left: 20px;
+  bottom: 20px;
+  z-index: 100;
 }
 
 nav a {
-  width: 80px;
-  height: 50px;
-  border-radius: 10px;
-  background-color: rgb(100, 100, 100);
   color: white;
-  font-weight: 300;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  font-family: 'Righteous', cursive;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   text-decoration: none;
+  font-size: 14px;
+  padding: 8px 12px;
+  background-color: rgba(255,255,255,0.1);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  display: block;
 }
 
 nav a:hover {
-  background-color: rgb(150, 150, 150);
+  background-color: rgba(255,255,255,0.2);
+  text-decoration: underline;
 }
 
-nav a:visited {
-  color: red;
+/* ===== Hamburger Button ===== */
+.hamburger-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: 2px solid white;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  z-index: 101;
+  transition: all 0.3s ease;
 }
 
+.hamburger-btn span {
+  width: 24px;
+  height: 2px;
+  background-color: white;
+  transition: all 0.3s ease;
+  display: block;
+}
+
+.hamburger-btn.active span:nth-child(1) {
+  transform: rotate(45deg) translate(10px, 10px);
+}
+
+.hamburger-btn.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-btn.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+.hamburger-btn:hover {
+  background-color: rgba(255,255,255,0.1);
+}
+
+/* ===== Mobile Menu ===== */
+nav.mobile-active {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 70px;
+  right: 20px;
+  background-color: rgba(35, 33, 33, 0.95);
+  border: 2px solid white;
+  border-radius: 8px;
+  padding: 15px;
+  width: auto;
+  min-width: 150px;
+  left: auto;
+  bottom: auto;
+}
+
+/* Removed orphaned nav-related CSS blocks */
 /* ===== Main Content ===== */
 main {
   margin-left: 50%;
