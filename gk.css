@@ -29,8 +29,7 @@ h1 {
   background-color: rgb(35, 33, 33);
   color: red;
   font-weight: bold;
-  padding: 20px;
-  padding-left: 80px;
+  padding: 80px 20px 20px 80px;
   box-sizing: border-box;
   position: fixed;
   height: 100vh;
@@ -67,16 +66,13 @@ nav {
 nav a {
   color: white;
   text-decoration: none;
-  font-size: 14px;
-  padding: 8px 12px;
-  background-color: rgba(255,255,255,0.1);
-  border-radius: 4px;
+  font-size: 16px;
+  padding: 4px 0;
   transition: all 0.3s ease;
   display: block;
 }
 
 nav a:hover {
-  background-color: rgba(255,255,255,0.2);
   text-decoration: underline;
 }
 
@@ -105,18 +101,6 @@ nav a:hover {
   background-color: white;
   transition: all 0.3s ease;
   display: block;
-}
-
-.hamburger-btn.active span:nth-child(1) {
-  transform: rotate(45deg) translate(10px, 10px);
-}
-
-.hamburger-btn.active span:nth-child(2) {
-  opacity: 0;
-}
-
-.hamburger-btn.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(7px, -7px);
 }
 
 .hamburger-btn:hover {
