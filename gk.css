@@ -42,13 +42,13 @@ h1 {
   overflow: hidden;
   background-image: url('gkresources/Media/band.jpg');
   background-size: cover;
-  background-position: center top;
+  background-position: center 60px;
 }
 
 /* Live page uses thumbdown image */
 .live-page h1 {
   background-image: url('gkresources/Media/thumbdown.jpg');
-  background-position: center top;
+  background-position: center 60px;
 }
 
 
